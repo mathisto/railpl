@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "remote_ruby"
 
 railpl = ::RemoteRuby::ExecutionContext.new(
@@ -6,14 +8,11 @@ railpl = ::RemoteRuby::ExecutionContext.new(
   rails: { environment: :development }
 )
 
-response = nil
-code = ARGV.join
-puts "ARGV: " + ARGV.join
-
-if code
-   response = railpl.execute { eval(code) }
-else
+if ARGV.size != 1
   puts "You must send a single string containing your ruby code."
+  exit
 end
 
+code = ARGV.join
+response = railpl.execute { eval(code) }
 puts response.inspect

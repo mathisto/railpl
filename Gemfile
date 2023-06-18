@@ -42,7 +42,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "remote_ruby" # Allow remote execution of arbitrary ruby. This is not going to end wellbu.
+gem "remote_ruby" # Allow remote execution of arbitrary ruby. This is not going to end well.
 
 # Use Sass to process CSS
 # gem "sassc-rails"
